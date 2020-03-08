@@ -25,11 +25,11 @@ public class AutoBlueBuild_V2 extends LinearOpMode
         holo.platformRelease();
         holo.driveStrafe_Inches(28, .8, this);
         holo.driveStraight_Inches(21, .8, this);
-        holo.driveStrafe_Inches(-6,.8, this);
-        holo.driveStrafe_Inches(6,.8, this);
+        holo.driveStrafe_Inches(-9,.8, this);
+        holo.driveStrafe_Inches(9,.8, this);
         holo.driveStraight_Inches(-18,.8, this);
-        holo.driveStrafe_Inches(20,.8, this);
-        holo.driveStraight_Inches(-4,.8,this);
+        holo.driveStrafe_Inches(18,.8, this);
+        holo.driveStraight_Inches(-6,.8,this);
         while (opModeIsActive() && !isStopRequested())
         {
             holo.stopDriveMotors();
