@@ -16,12 +16,12 @@ public class AutoRedLoad_V2 extends LinearOpMode
 
         //red loading side, robot facing the cubes in the middle, outside of the left wheels lined
         //up with the outside edge closer to the build zone of the second square from the audience side
-        holo.driveStraight_Inches(26, .8, this);
+        holo.driveStraight_Inches(24, .8, this);
         sleep(100);
-        holo.driveStrafe_Inches(-2,.5, this); //was 16 but added 8 for the sensor distance adjustment
+        holo.driveStrafe_Inches(-4,.5, this); //2
         char colorSkystone = holo.getColor();
         int testNumber = 1;
-        float totalStrafeDist_In = 60;
+        float totalStrafeDist_In = 62;
         boolean isFirstBlock = true;
         telemetry.addData("stone color = ", colorSkystone);
         telemetry.update();
@@ -47,7 +47,7 @@ public class AutoRedLoad_V2 extends LinearOpMode
         if (isFirstBlock)
         {
             totalStrafeDist_In += 8;
-            requiredDist_in = requiredDist_in + 0.75f; //further away from stone for just end block
+            requiredDist_in = requiredDist_in + 0.5f; //further away from stone for just end block
         }
         holo.driveStrafe_Inches(-((totalStrafeDist_In - 24f)), .5, this);
         holo.clamp(false);
@@ -57,7 +57,8 @@ public class AutoRedLoad_V2 extends LinearOpMode
         holo.drivePivot_Degrees(-90,.9, this);
         holo.driveStrafe_Inches(-3,.9,this);
         holo.driveStraight_Inches(totalStrafeDist_In - 23, .9, this);
-        holo.driveStraight_Inches(-15,.9, this);
+        holo.driveStraight_Inches(-18,.9, this);
+        holo.driveStrafe_Inches(-4, .6f, this);
         while (opModeIsActive() && !isStopRequested())
         {
             holo.stopDriveMotors();
